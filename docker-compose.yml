@@ -1,0 +1,15 @@
+version: '3'
+services:
+  emo-server:
+    environment:
+      - VUE_FRONTEND_URL=http://localhost:8080
+      - MAILGUN_API_KEY=key-46b61d449abe191f4b14418e547705b8
+      - MAILGUN_API_DOMAIN=sandbox754e87877afd499b84136ac59b324a0a.mailgun.org
+      - MAILGUN_EMAIL_ADDRESS='Excited User <me@samples.mailgun.org>'
+    image: "ejay010/emobie-server:woods"
+    ports:
+      - "3000:3000"
+  redis:
+    image: "redis:alpine"
+  mongo:
+    image: "mongo:3.2-jessie"
